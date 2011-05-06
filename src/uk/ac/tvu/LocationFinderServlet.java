@@ -124,7 +124,7 @@ public class LocationFinderServlet extends HttpServlet {
 		km.setRoom2(Integer.parseInt(ss2));
 		km.setRoom3(Integer.parseInt(ss3));
 		category = main.classifiedQueryInstance(main.getTrainingKNNData(), km,
-				3);
+				2);
 		return category;
 	}
 

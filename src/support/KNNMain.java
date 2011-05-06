@@ -158,7 +158,6 @@ public class KNNMain {
 	}
 
 	private int findGreatest(int... val) {
-		int oneCount = 0;
 		int largest = val[0];
 		boolean isLargest = false;
 		int index = 0;
