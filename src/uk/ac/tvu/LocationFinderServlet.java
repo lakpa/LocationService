@@ -26,8 +26,8 @@ import support.BluetoothDeviceModel;
  */
 public class LocationFinderServlet extends HttpServlet {
 	private String category = "";
-	public static String MAC_ADD_ROOM1 = "00:19:0E:08:04:EA";
-	public static String MAC_ADD_ROOM2 = "00:19:0E:08:08:B7";
+	public static String MAC_ADD_ROOM1 = "00:19:0E:08:08:B7";
+	public static String MAC_ADD_ROOM2 = "00:19:0E:08:04:EA";
 	public static String MAC_ADD_ROOM3 = "00:19:0E:08:06:F6";
 	private String ss1, ss2, ss3;
 
@@ -124,7 +124,7 @@ public class LocationFinderServlet extends HttpServlet {
 		km.setRoom2(Integer.parseInt(ss2));
 		km.setRoom3(Integer.parseInt(ss3));
 		category = main.classifiedQueryInstance(main.getTrainingKNNData(), km,
-				2);
+				3);
 		return category;
 	}
 
