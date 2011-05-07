@@ -34,10 +34,7 @@ public class DatabaseSyncServlet extends HttpServlet {
 	 */
 	public DatabaseSyncServlet() {
 		super();
-		main = new KNNMain();
 
-		// connect database
-		main.connectToDB();
 	}
 
 	/**
@@ -61,7 +58,11 @@ public class DatabaseSyncServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		ByteBuffer inputBB = new ByteBuffer(request.getInputStream());
 		ByteBuffer outputBB = null;
-
+		
+		main = new KNNMain();
+		// connect database
+		main.connectToDB();
+		
 		try {
 			System.out.println("Extracting hash table from the request");
 			ObjectInputStream ois = new ObjectInputStream(

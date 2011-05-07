@@ -87,7 +87,7 @@ public class KNNMain {
 			}
 			rs.close();
 			stmt.close();
-			// connection.close();
+			 connection.close();
 		} catch (SQLException e) {
 			displaySQLErrors(e);
 		}
@@ -126,7 +126,6 @@ public class KNNMain {
 			}
 		}
 
-		System.out.println("After--");
 		printList(knnList, k);
 		int a[] = { nearTC354, inTC357, inTC364, nearTC360, nearTC357 };
 		int index = findGreatest(a);
@@ -179,15 +178,16 @@ public class KNNMain {
 	}
 
 	private void printList(List<KNNModel> knnList, int k) {
+		System.out.println("AP1 "+"AP2 "+"AP3 "+"Classification "+"Distance "+"Rank");
 		for (int i = 0; i < knnList.size(); i++) {
 			KNNModel model = knnList.get(i);
-			if (model.getRank() <= k) {
-				System.out.println(model.getRoom1() + " " + model.getRoom2()
-						+ " " + model.getRoom3() + " "
-						+ model.getClassification() + " "
-						+ model.getDistanceToQueryInstance() + " "
-						+ model.getRank() + " " + model.isInNeighbourList());
-			}
+//			if (model.getRank() <= k) {
+				System.out.println(model.getRoom1() + "  " + model.getRoom2()
+						+ " " + model.getRoom3() + "   "
+						+ model.getClassification() + "       "
+						+ model.getDistanceToQueryInstance() + "      "
+						+ model.getRank() + "      " + model.isInNeighbourList());
+//			}
 		}
 	}
 

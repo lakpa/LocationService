@@ -37,6 +37,10 @@ public class LocationFinderServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	
+	public LocationFinderServlet() {
+		System.out.println("Location Estimator Servlet started");
+	}
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ServletOutputStream sos = response.getOutputStream();
