@@ -22,25 +22,45 @@ import support.MIMETypeConstantsIF;
 import support.BluetoothDeviceModel;
 
 /**
- * Servlet implementation class LocationFinder
+ * Servlet implementation class LocationFinder.
+ *
+ * @author lakpa
+ * @author Nazmul Idris
  */
 public class LocationFinderServlet extends HttpServlet {
+	
+	/** The category. */
 	private String category = "";
+	
+	/** The MA c_ ad d_ roo m1. */
 	public static String MAC_ADD_ROOM1 = "00:19:0E:08:08:B7";
+	
+	/** The MA c_ ad d_ roo m2. */
 	public static String MAC_ADD_ROOM2 = "00:19:0E:08:04:EA";
+	
+	/** The MA c_ ad d_ roo m3. */
 	public static String MAC_ADD_ROOM3 = "00:19:0E:08:06:F6";
+	
+	/** The ss3. */
 	private String ss1, ss2, ss3;
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Instantiates a new location finder servlet.
+	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * response)
 	 */
 	
 	public LocationFinderServlet() {
 		System.out.println("Location Estimator Servlet started");
 	}
+	
+	/* (non-Javadoc)
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ServletOutputStream sos = response.getOutputStream();
@@ -51,8 +71,14 @@ public class LocationFinderServlet extends HttpServlet {
 	}
 
 	/**
+	 * Do post.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * response)
 	 */
 	@Override 
 	protected void doPost(HttpServletRequest request,
@@ -104,6 +130,12 @@ public class LocationFinderServlet extends HttpServlet {
 		  sos.close();
 	}
 	
+	/**
+	 * Gets the category.
+	 *
+	 * @param input the input
+	 * @return the category
+	 */
 	private String getCategory(Hashtable<String, List<BluetoothDeviceModel>> input) {
 		KNNMain main = new KNNMain();
 		if (main.connectToDB()) {
@@ -132,6 +164,12 @@ public class LocationFinderServlet extends HttpServlet {
 		return category;
 	}
 
+	/**
+	 * Process input.
+	 *
+	 * @param input the input
+	 * @return the hashtable
+	 */
 	private Hashtable<DataKeys, Serializable> processInput(
 			Hashtable<String, List<BluetoothDeviceModel>> input) {
 		Hashtable<DataKeys, Serializable> retval = new Hashtable<DataKeys, Serializable>();

@@ -3,10 +3,8 @@ package support;
 import java.io.*;                  //Network classes
 
 /**
- * <B>ByteBuffer</B> is a container for bytes. A ByteBuffer is to bytes, what a StringBuffer is to
+ * ByteBuffer is a container for bytes. A ByteBuffer is to bytes, what a StringBuffer is to
  * Strings.
- * <p/>
- * <p/>
  *
  * @author Nazmul Idris
  * @version 1.0
@@ -18,9 +16,7 @@ public class ByteBuffer
 
 static final long serialVersionUID = 7401588019652180668L;
 
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // constants
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 public static final int BUFFER_SIZE = 4096;
 
 //

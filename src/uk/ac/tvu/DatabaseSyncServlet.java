@@ -22,14 +22,22 @@ import support.DataKeys;
 import support.MIMETypeConstantsIF;
 
 /**
- * Servlet implementation class DatabaseSyncServlet
+ * Servlet implementation class DatabaseSyncServlet.
+ *
+ * @author lakpa
+ * @author Nazmul Idris
  */
 public class DatabaseSyncServlet extends HttpServlet {
+	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The main. */
 	private KNNMain main = null;
 
 	/**
+	 * Instantiates a new database sync servlet.
+	 *
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public DatabaseSyncServlet() {
@@ -38,8 +46,14 @@ public class DatabaseSyncServlet extends HttpServlet {
 	}
 
 	/**
+	 * Do get.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * response)
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -51,8 +65,14 @@ public class DatabaseSyncServlet extends HttpServlet {
 	}
 
 	/**
+	 * Do post.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * response)
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -107,6 +127,13 @@ public class DatabaseSyncServlet extends HttpServlet {
 		sos.close();
 	}
 
+	/**
+	 * Process.
+	 *
+	 * @param dateVal the date val
+	 * @param listModel the list model
+	 * @return the hashtable
+	 */
 	private Hashtable<DataKeys, Serializable> process(
 			Hashtable<String, String> dateVal,
 			List<KNNModel> listModel) {
@@ -117,6 +144,13 @@ public class DatabaseSyncServlet extends HttpServlet {
 		return val;
 	}
 
+	/**
+	 * Gets the new data.
+	 *
+	 * @param input the input
+	 * @param dbList the db list
+	 * @return the new data
+	 */
 	private KNNModel getNewData(Hashtable<String, String> input,
 			List<KNNModel> dbList) {
 		KNNModel km = new KNNModel();
